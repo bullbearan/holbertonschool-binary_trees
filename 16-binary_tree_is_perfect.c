@@ -44,6 +44,8 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int n = 0, i;
 
+	if (tree->left == NULL && tree->right == NULL && tree->parent == NULL)
+		return (1);
 	if (tree == NULL)
 		return (0);
 	n = check_leaf(tree->left) && check_leaf(tree->right);
